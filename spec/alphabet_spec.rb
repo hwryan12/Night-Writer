@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-RSpec.describe "Alphabet" do
+RSpec.describe Alphabet do
   let(:alphabet) { Alphabet.new }
   describe "#initialize" do
     it "exists" do
