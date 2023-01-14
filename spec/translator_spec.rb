@@ -17,8 +17,17 @@ RSpec.describe Translator do
       expect(translator.array_of_braille).to eq([])
     end
     
-    xit "returns the alphabet hash as an array" do
-      expect(translator.convert_to_array).to eq()
+    it "returns the alphabet hash as an array" do
+      input = "hello"
+      expected = [
+        ["0.", "00", ".."],
+        ["0.", ".0", ".."],
+        ["0.", "0.", "0."],
+        ["0.", "0.", "0."],
+        ["0.", ".0", "0."]
+      ]
+      
+      expect(translator.convert_to_array(input)).to eq(expected)
     end
   end
 end

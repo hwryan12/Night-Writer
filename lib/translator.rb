@@ -10,7 +10,10 @@ class Translator
     @array_of_braille = []
   end
 
-  def convert_to_array
-
+  def convert_to_array(input)
+    input.each_char.reduce([]) do |array, character|
+      array << @alphabet.english_alphabet[character]
+      # binding.pry
+    end
   end
 end
