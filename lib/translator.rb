@@ -13,7 +13,23 @@ class Translator
   def convert_to_array(input)
     input.each_char.reduce([]) do |array, character|
       array << @alphabet.english_alphabet[character]
-      # binding.pry
     end
+  end
+  
+  def braille_array_to_string(input ,braille_array)
+    formatted_braile = convert_to_array(input)
+    braille_array = ""
+    formatted_braile.each do |character|
+      braille_array += character[0]
+    end
+    braille_array += "\n"
+    formatted_braile.each do |character|
+      braille_array += character[1]
+    end
+    braille_array += "\n"
+    formatted_braile.each do |character|
+      braille_array += character[2]
+    end
+    braille_array
   end
 end

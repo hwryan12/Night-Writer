@@ -34,10 +34,8 @@ RSpec.describe Translator do
   describe "#braille_array_to_string"
     it "can return the array of braille as a string with line breaks" do
       input = "hello"
-      expected = ["0.0.0.0.0./n00.00.0..0/n....0.0.0."]
+      expected = "0.0.0.0.0.\n00.00.0..0\n....0.0.0."
 
-      translator.convert_to_array(input)
-
-      expect(translator.braille_array_to_string).to eq(expected)
+      expect(translator.braille_array_to_string(input, @array_of_braille)).to eq(expected)
     end
 end
