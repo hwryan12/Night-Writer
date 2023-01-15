@@ -3,4 +3,4 @@ require 'rspec'
 require 'pry'
 SimpleCov.start
 require './lib/alphabet'
-require './lib/translator'
+require './lib/eng_translator'

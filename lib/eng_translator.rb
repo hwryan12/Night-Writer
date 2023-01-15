@@ -1,5 +1,5 @@
 require_relative "alphabet"
-class Translator
+class EngTranslator
   attr_reader :alphabet,
               :message,
               :array_of_braille

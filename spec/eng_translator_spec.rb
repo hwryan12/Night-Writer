@@ -1,10 +1,10 @@
 require_relative 'spec_helper'
 
-RSpec.describe Translator do
-  let(:translator) { Translator.new("message") }
+RSpec.describe EngTranslator do
+  let(:translator) { EngTranslator.new("message") }
   describe "#initialize" do
     it "exists" do
-      expect(translator).to be_instance_of(Translator)
+      expect(translator).to be_instance_of(EngTranslator)
     end
 
     it "instantiates an English to braille alphabet on creation" do
