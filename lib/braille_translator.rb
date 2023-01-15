@@ -13,4 +13,17 @@ class BrailleTranslator
     end
     new_array.transpose
   end
+
+  def translate_to_english(input)
+    helper = []
+    input.each do |array|
+      @alphabet.braille_alphabet.find do |character|
+        helper << character[1] if character[0] == array
+      end
+    end
+    helper.join
+  end
 end
+        
+        
+        
