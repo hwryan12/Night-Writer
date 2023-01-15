@@ -2,6 +2,7 @@ require_relative 'spec_helper'
 
 RSpec.describe EngTranslator do
   let(:translator) { EngTranslator.new("message") }
+  
   describe "#initialize" do
     it "exists" do
       expect(translator).to be_instance_of(EngTranslator)
