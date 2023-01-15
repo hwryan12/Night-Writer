@@ -2,7 +2,7 @@ require_relative "alphabet"
 class BrailleTranslator
   attr_reader :alphabet
 
-  def initialize
+  def initialize(input)
     @alphabet = Alphabet.new
   end
 

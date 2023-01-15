@@ -1,13 +1,14 @@
-require_relative 'translator'
+require_relative 'braille_translator'
 
-english_file = File.open(ARGV[0], 'r')
-input = english_file.read.chomp
-english_file.close
+braille_file = File.open(ARGV[0], 'r')
+input = braille_file.read.chomp
+braille_file.close
 
-translator = Translator.new(input)
-text = translator.line_break(input)
-braille_text = translator.braille_array_to_string(text)
-translation_to_braille = File.open(ARGV[1], 'w')
-translation_to_braille.write(braille_text)
+translator = BrailleTranslator.new(input)
+text = translator.convert_to_array(input)
+english_text = translator.translate_to_english(text)
+# require "pry";binding.pry
+translation_to_english = File.open(ARGV[1], 'w')
+translation_to_english.write(english_text)
 
 puts "Created #{ARGV[1]} containing #{text.length} characters"
