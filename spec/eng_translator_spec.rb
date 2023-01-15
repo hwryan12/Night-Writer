@@ -14,11 +14,7 @@ RSpec.describe EngTranslator do
   end
   
   describe "#convert_to_array" do
-    # it "has an empty array of braille characters by default" do
-    #   expect(translator.array_of_braille).to eq([])
-    # end
-    
-    it "returns the alphabet hash as an array of braille letters" do
+    it "returns the alphabet hash as an string of braille letters" do
       input = "hello"
       expected = [
         ["0.", "00", ".."],
