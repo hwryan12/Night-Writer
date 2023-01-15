@@ -7,7 +7,7 @@ class Translator
   def initialize(message)
     @alphabet = Alphabet.new
     @message = message
-    @array_of_braille = []
+    # @array_of_braille = []
   end
 
   def convert_to_array(input)
@@ -16,20 +16,27 @@ class Translator
     end
   end
   
-  def braille_array_to_string(input ,braille_array)
-    formatted_braile = convert_to_array(input)
-    braille_array = ""
+  def braille_array_to_string(input)
+    formatted_braile = convert_to_array(input).compact
+    top_line = []
     formatted_braile.each do |character|
-      braille_array += character[0]
+      top_line << character[0]
     end
-    braille_array += "\n"
+    middle_line = []
     formatted_braile.each do |character|
-      braille_array += character[1]
+      middle_line << character[1]
     end
-    braille_array += "\n"
+    bottom_line = []
     formatted_braile.each do |character|
-      braille_array += character[2]
+      bottom_line << character[2]
     end
-    braille_array
+    # require "pry";binding.pry
+    place_holder = []
+    place_holder << "#{top_line.join}\n#{middle_line.join}\n#{bottom_line.join}"
+    place_holder.join
+  end
+  
+  def line_break(input)
+    input.scan(/.{80}|.+/).join("\n")
   end
 end
