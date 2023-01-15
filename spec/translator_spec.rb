@@ -33,8 +33,8 @@ RSpec.describe Translator do
 
   describe "#braille_array_to_string" do
     it "can return the array of braille as a string with line breaks" do
-      input = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-      expected = "0.0.0.0.0.\n00.00.0..0\n....0.0.0.\n"
+      input = "hello"
+      expected = "0.0.0.0.0.\n00.00.0..0\n....0.0.0."
 
       expect(translator.braille_array_to_string(input)).to eq(expected)
     end
@@ -44,7 +44,6 @@ RSpec.describe Translator do
     it "will break the line of text into another array if it is more than 80 characters long" do
       input = ".................................................................................."
       expected = "................................................................................\n.."  
-      # binding.pry
       expect(translator.line_break(input)).to eq(expected)  
     end
   end
