@@ -18,7 +18,6 @@ RSpec.describe Alphabet do
     end
 
     it "has braille to english alphabet as a hash" do
-      # binding.pry
       expect(alphabet.braille_alphabet).to be_a(Hash)
     end
   end
