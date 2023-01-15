@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
 RSpec.describe BrailleTranslator do
-  let(:translator) { BrailleTranslator.new("message") }
+  let(:translator) { BrailleTranslator.new }
 
   describe "#initalize" do
     it "exists" do
