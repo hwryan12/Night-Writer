@@ -16,5 +16,9 @@ RSpec.describe Alphabet do
       expect(alphabet.english_alphabet["w"]).to eq([".0", "00", ".0"])
       expect(alphabet.english_alphabet["r"]).to eq(["0.", "00", "0."])
     end
+
+    it "has braille to english alphabet as a hash" do
+      expect(alphabet.braille_alphabet).to be_a(Hash)
+    end
   end
 end

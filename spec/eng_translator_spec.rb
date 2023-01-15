@@ -1,10 +1,11 @@
 require_relative 'spec_helper'
 
-RSpec.describe Translator do
-  let(:translator) { Translator.new("message") }
+RSpec.describe EngTranslator do
+  let(:translator) { EngTranslator.new("message") }
+  
   describe "#initialize" do
     it "exists" do
-      expect(translator).to be_instance_of(Translator)
+      expect(translator).to be_instance_of(EngTranslator)
     end
 
     it "instantiates an English to braille alphabet on creation" do
@@ -13,11 +14,7 @@ RSpec.describe Translator do
   end
   
   describe "#convert_to_array" do
-    # it "has an empty array of braille characters by default" do
-    #   expect(translator.array_of_braille).to eq([])
-    # end
-    
-    it "returns the alphabet hash as an array of braille letters" do
+    it "returns the alphabet hash as an string of braille letters" do
       input = "hello"
       expected = [
         ["0.", "00", ".."],
