@@ -47,10 +47,7 @@ RSpec.describe BrailleTranslator do
 
   describe "#convert_to_array" do
     it "returns the braille message as an an array of arrays" do
-      input = "
-        0.0.0.0.0.
-        00.00.0..0
-        ....0.0.0."
+      input = "\n        0.0.0.0.0.\n        00.00.0..0\n        ....0.0.0."
       expected = [
         ["0.", "00", ".."], 
         ["0.", ".0", ".."], 

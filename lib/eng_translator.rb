@@ -44,7 +44,7 @@ class EngTranslator < Alphabet
     top_line = braille_top_line(input)
     middle_line = braille_middle_line(input)
     bottom_line = braille_bottom_line(input)
-    place_holder = ""
+    translation = ""
     while top_line.length > 0
       translation += (top_line.shift(20).join + "\n" + middle_line.shift(20).join + "\n" + bottom_line.shift(20).join)
       translation += "\n" if top_line.length > 0
