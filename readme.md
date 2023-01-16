@@ -22,19 +22,21 @@
 #
 
 ### Design Strategy
-This project was made in accordance with Test-Driven Developement with RSpec. It impliments two seperate runner files: `night_writer.rb` and `night_reader.rb`. The Braille characters are printed in a 2x3 grid like so: __(#insert example picture here)__ and may only print up to 40 Braille characters(80 English characters) per line of text.
+This project was made in accordance with Test-Driven Developement with RSpec. It implements two seperate runner files: `night_writer.rb` and `night_reader.rb`. The Braille characters are printed in a 2x3 grid like so: __(#insert example picture here)__ and may only print up to 40 Braille characters(80 English characters) per line of text.
 #
 
 ### Application
-To run this program please clone this repository down to your local machine. Once you have cloned down and are ready to translate into Braille, simply type the message you wish to be translated into the file
+To run this program, please clone this repository down to your local machine. Once you have cloned down and are ready to translate into Braille, simply type the message you wish to be translated into the file
 `message.txt` and then type the following command into your command-line terminal: 
-> `ruby ./lib/night_writer.rb message.txt braille.txt` 
->
+
+`ruby ./lib/night_writer.rb message.txt braille.txt` 
+
 __(#insert example picture here)__
 
 Now to translate your Braille message back into English, type the following command back into your command-line terminal:
-> `ruby ./lib/night_reader.rb braille.txt original_message.txt`
->
+
+`ruby ./lib/night_reader.rb braille.txt original_message.txt`
+
 __(#insert example picture here)__
 #
 
