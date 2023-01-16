@@ -42,6 +42,13 @@ RSpec.describe EngTranslator do
 
       expect(translator.braille_middle_line(input)).to eq(expected)
     end
+
+    it "can return the array of the bottom line of braille characters" do
+      input = "hello"
+      expected = ["..", "..", "0.", "0.", "0."]
+
+      expect(translator.braille_bottom_line(input)).to eq(expected)
+    end
   end
 
   describe "#braille_array_to_string" do
