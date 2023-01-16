@@ -1,13 +1,12 @@
 require_relative "alphabet"
+
 class EngTranslator
   attr_reader :alphabet,
-              :message,
-              :array_of_braille
+              :message
 
   def initialize(message)
     @alphabet = Alphabet.new
     @message = message
-    # @array_of_braille = []
   end
 
   def convert_to_array(input)
@@ -30,7 +29,6 @@ class EngTranslator
     formatted_braile.each do |character|
       bottom_line << character[2]
     end
-    # require "pry";binding.pry
     place_holder = []
     place_holder << "#{top_line.join}\n#{middle_line.join}\n#{bottom_line.join}"
     place_holder.join
