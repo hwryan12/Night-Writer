@@ -14,6 +14,15 @@ class EngTranslator
       array << @alphabet.english_alphabet[character]
     end
   end
+
+  def braille_top_line(input)
+    formatted_braile = convert_to_array(input).compact
+    top_line = []
+    formatted_braile.each do |character|
+      top_line << character[0]
+    end
+    top_line
+  end
   
   def braille_array_to_string(input)
     formatted_braile = convert_to_array(input).compact
