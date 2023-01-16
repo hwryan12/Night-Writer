@@ -59,12 +59,4 @@ RSpec.describe EngTranslator do
       expect(translator.braille_array_to_string(input)).to eq(expected)
     end
   end
-
-  describe "#line_break" do
-    it "will break the line of text into another array if it is more than 80 characters long" do
-      input = ".................................................................................."
-      expected = "................................................................................\n.."  
-      expect(translator.line_break(input)).to eq(expected)  
-    end
-  end
 end

@@ -48,15 +48,11 @@ class EngTranslator
     bottom_line = braille_bottom_line(input)
     place_holder = ""
     while top_line.length > 0
-      require "pry"; binding.pry
+      # require "pry"; binding.pry
       place_holder += (top_line.shift(20).join + "\n" + middle_line.shift(20).join + "\n" + bottom_line.shift(20).join)
       place_holder += "\n" if top_line.length > 0
     end
-    require "pry"; binding.pry
+    # require "pry"; binding.pry
     place_holder
   end
-  
-  # def line_break(input)
-  #   input.scan(/.{80}|.+/).join("\n")
-  # end
 end
