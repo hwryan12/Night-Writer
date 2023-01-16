@@ -1,0 +1,1 @@
+To run this program, please clone this repository down to your local machine. Once you have cloned down and are ready to translate into Braille, simply type the message you wish to be translated into the file message.txt and then type the following command into your command-line terminal
