@@ -23,6 +23,15 @@ class EngTranslator
     end
     top_line
   end
+
+  def braille_middle_line(input)
+    formatted_braile = convert_to_array(input).compact
+    middle_line = []
+    formatted_braile.each do |character|
+      middle_line << character[1]
+    end
+    middle_line
+  end
   
   def braille_array_to_string(input)
     formatted_braile = convert_to_array(input).compact
