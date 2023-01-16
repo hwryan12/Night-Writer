@@ -1,17 +1,15 @@
 require_relative "alphabet"
 
-class EngTranslator
-  attr_reader :alphabet,
-              :message
+class EngTranslator < Alphabet
+  attr_reader :alphabet
 
-  def initialize(message)
-    @alphabet = Alphabet.new
-    @message = message
+  def initialize(input)
+    @alphabet = super
   end
 
   def convert_to_array(input)
     input.each_char.reduce([]) do |array, character|
-      array << @alphabet.english_alphabet[character]
+      array << @alphabet[character]
     end
   end
 

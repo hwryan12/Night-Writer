@@ -1,9 +1,9 @@
 require_relative "alphabet"
-class BrailleTranslator
+class BrailleTranslator < Alphabet
   attr_reader :alphabet
 
   def initialize(input)
-    @alphabet = Alphabet.new
+    @alphabet = super.invert
   end
 
   def convert_to_array(input)
@@ -17,7 +17,7 @@ class BrailleTranslator
   def translate_to_english(input)
     helper = []
     input.each do |array|
-      @alphabet.braille_alphabet.find do |character|
+      @alphabet.find do |character|
         helper << character[1] if character[0] == array
       end
     end
