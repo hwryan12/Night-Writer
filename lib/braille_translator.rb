@@ -7,21 +7,21 @@ class BrailleTranslator < Alphabet
   end
 
   def convert_to_array(input)
-    text = input.split()
-    new_array = text.map do |element|
-      element.chars.each_slice(2).map(&:join)
+    message = input.split()
+    braille_collection = message.map do |characters|
+      characters.chars.each_slice(2).map(&:join)
     end
-    new_array.transpose
+    braille_collection.transpose
   end
 
   def translate_to_english(input)
-    helper = []
-    input.each do |array|
-      @alphabet.find do |character|
-        helper << character[1] if character[0] == array
+    translation = []
+    input.each do |braille_character|
+      @alphabet.find do |braille_eng_pair|
+        translation << braille_eng_pair[1] if braille_eng_pair[0] == braille_character
       end
     end
-    helper.join
+    translation.join
   end
 end
         

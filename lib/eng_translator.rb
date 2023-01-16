@@ -8,33 +8,33 @@ class EngTranslator < Alphabet
   end
 
   def convert_to_array(input)
-    input.each_char.reduce([]) do |array, character|
-      array << @alphabet[character]
+    input.each_char.reduce([]) do |collection_of_eng_chars, eng_character|
+      collection_of_eng_chars << @alphabet[eng_character]
     end
   end
 
   def braille_top_line(input)
-    formatted_braile = convert_to_array(input).compact
+    formatted_braille = convert_to_array(input).compact
     top_line = []
-    formatted_braile.each do |character|
+    formatted_braille.each do |character|
       top_line << character[0]
     end
     top_line
   end
 
   def braille_middle_line(input)
-    formatted_braile = convert_to_array(input).compact
+    formatted_braille = convert_to_array(input).compact
     middle_line = []
-    formatted_braile.each do |character|
+    formatted_braille.each do |character|
       middle_line << character[1]
     end
     middle_line
   end
 
   def braille_bottom_line(input)
-    formatted_braile = convert_to_array(input).compact
+    formatted_braille = convert_to_array(input).compact
     bottom_line = []
-    formatted_braile.each do |character|
+    formatted_braille.each do |character|
       bottom_line << character[2]
     end
     bottom_line
@@ -46,11 +46,9 @@ class EngTranslator < Alphabet
     bottom_line = braille_bottom_line(input)
     place_holder = ""
     while top_line.length > 0
-      # require "pry"; binding.pry
-      place_holder += (top_line.shift(20).join + "\n" + middle_line.shift(20).join + "\n" + bottom_line.shift(20).join)
-      place_holder += "\n" if top_line.length > 0
+      translation += (top_line.shift(20).join + "\n" + middle_line.shift(20).join + "\n" + bottom_line.shift(20).join)
+      translation += "\n" if top_line.length > 0
     end
-    # require "pry"; binding.pry
-    place_holder
+    translation
   end
 end
