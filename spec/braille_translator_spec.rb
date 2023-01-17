@@ -56,10 +56,19 @@ RSpec.describe BrailleTranslator do
 
   describe "#translate_to_english" do
     it "returns given array of braille letters as a string of English letters" do
-    input = ["0.00..", "0..0..", "0.0.0.", "0.0.0.", "0..00."]
-    expected = "hello"
+      input = ["0.00..", "0..0..", "0.0.0.", "0.0.0.", "0..00."]
+      expected = "hello"
 
-    expect(translator.translate_to_english(input)).to eq(expected)
+      expect(translator.translate_to_english(input)).to eq(expected)
+    end
+  end
+
+  describe "#line_break" do
+    it "create a line break for the retranslated string if it is more tha 80 chracters long" do
+      input = "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world"
+      expected = "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhel\\nlo worldhello world"
+      
+      expect(translator.line_break(input)).to eq(expected)
     end
   end
 end

@@ -26,6 +26,10 @@ class BrailleTranslator < Alphabet
     end
     translation
   end
+
+  def line_break(input)
+    input.chars.each_slice(80).map(&:join).join('\n')
+  end
 end
         
         
