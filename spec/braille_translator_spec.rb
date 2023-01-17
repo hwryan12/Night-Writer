@@ -46,15 +46,9 @@ RSpec.describe BrailleTranslator do
   end
 
   describe "#convert_to_array" do
-    it "returns the braille message as an an array of arrays" do
-      input = "\n        0.0.0.0.0.\n        00.00.0..0\n        ....0.0.0."
-      expected = [
-        ["0.", "00", ".."], 
-        ["0.", ".0", ".."], 
-        ["0.", "0.", "0."], 
-        ["0.", "0.", "0."], 
-        ["0.", ".0", "0."]
-      ]
+    it "returns the braille message as an an array of braille characters" do
+      input = "\n0.0.0.0.0.\n00.00.0..0\n....0.0.0."
+      expected = ["0.00..", "0..0..", "0.0.0.", "0.0.0.", "0..00."]
 
       expect(translator.convert_to_array(input)).to eq(expected)
     end
@@ -62,13 +56,7 @@ RSpec.describe BrailleTranslator do
 
   describe "#translate_to_english" do
     it "returns given array of braille letters as a string of English letters" do
-    input = [
-      ["0.", "00", ".."], 
-      ["0.", ".0", ".."], 
-      ["0.", "0.", "0."], 
-      ["0.", "0.", "0."], 
-      ["0.", ".0", "0."]
-    ]
+    input = ["0.00..", "0..0..", "0.0.0.", "0.0.0.", "0..00."]
     expected = "hello"
 
     expect(translator.translate_to_english(input)).to eq(expected)
