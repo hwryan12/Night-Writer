@@ -1,7 +1,7 @@
 require_relative 'eng_translator'
 
 english_file = File.open(ARGV[0], 'r')
-text = english_file.read.chomp
+text = english_file.read.chomp.downcase
 english_file.close
 
 translator = EngTranslator.new(text)

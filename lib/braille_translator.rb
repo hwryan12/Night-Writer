@@ -7,21 +7,28 @@ class BrailleTranslator < Alphabet
   end
 
   def convert_to_array(input)
-    message = input.split()
-    braille_collection = message.map do |characters|
-      characters.chars.each_slice(2).map(&:join)
+    top_line = input.split().find_all.each_with_index { |character, index| index % 3 == 0 }.join
+    mid_line = input.split().find_all.each_with_index { |character, index| index % 3 == 1 }.join
+    bot_line = input.split().find_all.each_with_index { |character, index| index % 3 == 2 }.join
+    braille_collection = []
+    until top_line.empty?
+      braille_collection << top_line.slice!(0..1)
+      braille_collection << mid_line.slice!(0..1)
+      braille_collection << bot_line.slice!(0..1)
     end
-    braille_collection.transpose
+    braille_collection.join.scan(/.{6}/)
+  end
+  
+  def translate_to_english(input)
+    translation = ""
+    input.each do |character|
+      translation << @alphabet[character.chars.each_slice(2).map(&:join)]
+    end
+    translation
   end
 
-  def translate_to_english(input)
-    translation = []
-    input.each do |braille_character|
-      @alphabet.find do |braille_eng_pair|
-        translation << braille_eng_pair[1] if braille_eng_pair[0] == braille_character
-      end
-    end
-    translation.join
+  def line_break(input)
+    input.chars.each_slice(80).map(&:join).join('\n')
   end
 end
         
