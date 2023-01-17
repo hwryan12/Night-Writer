@@ -13,7 +13,6 @@
 1. Design Strategy
 1. Application
 1. Future Goals
-1. Reflections
 1. Contributer(s)
 
 ### Setup 
@@ -26,18 +25,23 @@ This project was made in accordance with Test-Driven Developement with RSpec. It
 #
 
 ### Application
-To run this program, please clone this repository down to your local machine. Once you have cloned down and are ready to translate into Braille, simply type the message you wish to be translated into the file
-`message.txt` and then type the following command into your command-line terminal: 
+To run this program, please clone this repository down to your local machine. Once you have cloned down and are ready to translate into Braille, simply type the message you wish to be translated into `message.txt` and input your desired file name followed by the extension `.txt` for the translated message file
+(for this example I used the file names `braille.txt` and `retranslated.txt`) and then type the following command into your command-line terminal: 
 
-`ruby ./lib/night_writer.rb message.txt braille.txt` 
+__NOTE:__ Remove all `<>` from the following command
 
-__(#insert example picture here)__
+`ruby ./lib/night_writer.rb message.txt <user_choice_name_2.txt>` 
+
+![Screenshot 2023-01-17 at 8 50 52 AM](https://user-images.githubusercontent.com/116698937/212933267-f31d8faf-49a3-49a5-966a-0849a1a5135a.png)
+![Screenshot 2023-01-17 at 8 51 14 AM](https://user-images.githubusercontent.com/116698937/212933632-a5ff4e55-9fd1-4d95-b623-12c55992c61f.png)
+
 
 Now to translate your Braille message back into English, type the following command back into your command-line terminal:
 
-`ruby ./lib/night_reader.rb braille.txt original_message.txt`
+`ruby ./lib/night_reader.rb <user_choice_name_2.txt> <user_choice_name_3.txt>`
 
-__(#insert example picture here)__
+![Screenshot 2023-01-17 at 8 51 14 AM](https://user-images.githubusercontent.com/116698937/212933632-a5ff4e55-9fd1-4d95-b623-12c55992c61f.png)
+![Screenshot 2023-01-17 at 8 52 42 AM](https://user-images.githubusercontent.com/116698937/212933717-46d2d31f-139e-4a6e-86e8-8807bc33f99e.png)
 #
 
 ### Future Goals
@@ -48,9 +52,7 @@ __(#insert example picture here)__
  * Supporting Braille capitalization
  * Supporting Braille numerics
  * Supporting Braille word contractions
-
- ### Reflections
-__(#Return here once finished)__
+ * Ability to function in languages other than English
 
 #
 ### Contributer(s)
